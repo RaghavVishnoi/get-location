@@ -1,0 +1,24 @@
+<script>
+  if ("geolocation" in navigator){ //check geolocation available 
+        //try to get user current location using getCurrentPosition() method
+        var lat = "";
+        var lng = ""
+        navigator.geolocation.getCurrentPosition(function(position){ 
+               lat = position.coords.latitude
+               lng = position.coords.longitude
+            });
+        $.ajax({
+          url: "/homes",
+          type: "post",
+          data: {
+            home: {
+              lat: lat,
+              lng: lng
+            }
+          },
+          dataType: "text"
+        })
+    }else{
+        console.log("Browser doesn't support geolocation!");
+    }
+</script>
