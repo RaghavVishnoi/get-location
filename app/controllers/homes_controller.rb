@@ -28,6 +28,7 @@ class HomesController < ApplicationController
 
     respond_to do |format|
       if @home.save
+        Notification.notify(home_params).deliver_now
         format.html { redirect_to '/thanksPageServlet'}
         format.json { render :show, status: :created, location: @home }
       else
