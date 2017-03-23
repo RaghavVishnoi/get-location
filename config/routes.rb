@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'loveMyIndia' => "homes#index"
+  get 'photos' => "homes#index"
   resources :homes, only: [:create]
   get 'thanksPageServlet' => "homes#thanks"
   # The priority is based upon order of creation: first created -> highest priority.
