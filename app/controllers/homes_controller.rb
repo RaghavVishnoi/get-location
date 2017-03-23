@@ -25,7 +25,6 @@ class HomesController < ApplicationController
   # POST /homes.json
   def create
     @home = Home.new(home_params)
-    puts "here is params #{home_params}"
     respond_to do |format|
       if @home.save
         Notification.notify(home_params).deliver_now

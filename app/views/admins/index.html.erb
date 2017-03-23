@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <title>Admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>state</th>
+        <th>country</th>
+        <th>location</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%@records.each do |record|%>
+      <tr>
+        <td><%=record.name%></td>
+        <td><%=record.address%></td>
+        <td><%=record.city%></td> 
+        <td><%=record.zone%></td>
+        <td><%=record.country%></td>
+        <td><a href= "https://www.google.co.in/maps/@<%=record.lat%>,<%=record.lng%>,15z">Location</a></td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

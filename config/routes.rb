@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :admins
   get 'photos' => "homes#index"
   resources :homes, only: [:create]
   get 'thanksPageServlet' => "homes#thanks"
