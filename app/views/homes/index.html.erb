@@ -1,31 +1,23 @@
- <script async defer
+ <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFPlBD8xbFGhTTyiSuK4ClwBns1mbE-AY&callback=initMap">
-    </script>
+    </script> -->
 <script>
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var name = "<%=params[:me]%>";
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
 
-function initMap() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var name = "<%=params[:me]%>";
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-
-            $.ajax({
-              url: "/homes",
-              type: "post",
-              data: {
-                home: {
-                  lat: latitude,
-                  lng: longitude,
-                  name: name
-                }
-              },
-              dataType: "text"
-            })  
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
+    $.ajax({
+      url: "/homes",
+      type: "post",
+      data: {
+        home: {
+          lat: latitude,
+          lng: longitude,
+          name: name
         }
-      }
+      },
+      dataType: "text"
+    })  
+  });
 </script>
