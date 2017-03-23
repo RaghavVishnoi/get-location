@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323070629) do
+ActiveRecord::Schema.define(version: 20170323075732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170323070629) do
     t.string   "city"
     t.string   "zone"
     t.string   "name"
+    t.text     "address"
   end
 
 end
