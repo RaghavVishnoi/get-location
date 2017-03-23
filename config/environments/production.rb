@@ -37,9 +37,9 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
-  
+  config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.default_url_options = { host: "https://votemyindia.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "https://photo4u.herokuapp.com" }
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail

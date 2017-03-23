@@ -70,6 +70,6 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:lat,:lng)
+      params.require(:home).permit(:lat,:lng,:country,:city,:zone,:name)
     end
 end
